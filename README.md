@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
-![Mood Tracker Screenshot](assets\Screenshot 2025-11-05 225722.png)
+![Mood Tracker Screenshot](assets\mood_tracker_screenshot.png)
 
 # mood_tracker
 
