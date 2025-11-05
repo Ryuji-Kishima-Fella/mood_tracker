@@ -3,7 +3,7 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
-![Mood Tracker Screenshot]("C:\Users\USER\Documents\GitHub\mood_tracker\Screenshot 2025-11-05 225722.png")
+![Mood Tracker Screenshot](assets/Screenshot 2025-11-05 225722.png)
 
 # mood_tracker
 
