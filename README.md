@@ -1,11 +1,12 @@
 ![Python](https://img.shields.io/badge/python-3.14-blue)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Ryuji-Kishima-Fella/mood-tracker)
+
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
 ![Mood Tracker Screenshot](assets/mood_tracker_screenshot.png)
 
-# mood_tracker
+# Mood Tracker
 
 A simple Python program that helps you log and track your daily moods - made as my first GitHub project.
 
