@@ -1,9 +1,9 @@
 ![Python](https://img.shields.io/badge/python-3.14-blue)
-![GitHub last commit](https://img.shields.io/github/last-commit/<your-username>/mood-tracker)
+![GitHub last commit](https://img.shields.io/github/last-commit/Ryuji-Kishima-Fella/mood-tracker)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
-![Mood Tracker Screenshot](assets/Screenshot 2025-11-05 225722.png)
+![Mood Tracker Screenshot](assets\Screenshot 2025-11-05 225722.png)
 
 # mood_tracker
 
