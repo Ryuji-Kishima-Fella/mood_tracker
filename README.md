@@ -82,6 +82,11 @@ Date,Mood
 - Add daily reminders
 - Turn into a web or mobile app
 
-### 🧩 New Feature (Nov 2025)
+## 🧩 New Feature (Nov 2025)
 Added an **Export to CSV** option that allows you to save your mood history as `mood_log.csv` for data analysis or visualization later.
 
+## Version History
+- `v1.0` — basic mood tracker
+- `v1.1` — CSV export
+- `v1.2` — date filter + delete
+- `v2.0` — GUI version
