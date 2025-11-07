@@ -1,4 +1,6 @@
 from datetime import datetime
+import csv
+
 
 def log_mood():
     mood = input("How are you feeling today? ")
@@ -40,13 +42,29 @@ def show_summary():
     except FileNotFoundError:
         print("No mood records found yet. Start by logging your first mood!")
 
+def export_to_csv():
+    # Export all mood entries from mood_log.txt into mood_log.csv
+    try:
+        with open("mood_log.txt", "r") as infile, open("mood_log.csv", "w", newline="", encoding="utf-8") as outfile:
+            writer = csv.writer(outfile)
+            writer.writerow(["Date", "Mood"]) # Header row
+            for line in infile:
+                parts = line.strip().split(" - ")
+                if len(parts) == 2:
+                    writer.writerow(parts)
+        
+        print("✅ Mood history exported to mood_log.csv successfully!")
+    except FileNotFoundError:
+        print("⚠️ No mood records found yet. Please log some moods first.")
+
   
 def main():
     print("=== Mood Tracker ===")
     print("1. Log today's mood")
     print("2. View mood history")
     print("3. View mood summary")
-    print("4. Exit")
+    print("4. Export mood history to CSV.")
+    print("X. Exit")
 
     choice = input("Enter your choice: ")
 
@@ -56,6 +74,8 @@ def main():
         show_moods()
     elif choice == "3":
         show_summary()
+    elif choice =="4":
+        export_to_csv()
     else:
         print("Goodbye!")
 
