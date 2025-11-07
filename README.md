@@ -23,6 +23,10 @@ This console-based app lets you:
 - Add daily reminders
 - Turn into a web or mobile app
 
+### 🧩 New Feature (Nov 2025)
+Added an **Export to CSV** option that allows you to save your mood history as `mood_log.csv` for data analysis or visualization later.
+
+
 ## How to Run
 1. Install Python 3.10+
 2. Download or clone this repository:
