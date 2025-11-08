@@ -46,15 +46,20 @@ def view_by_date():
     # Display moods logged on a specific date.
     try:
         target_date = input("Enter data (YYYY-MM-DD): ").strip()
+        # Validate date format
+        datetime.strptime(target_date, "%Y-%m-%d")
+
         with open("mood_log.txt", "r") as file:
             found = False
             print(f"\n📅 Moods on {target_date}:")
             for line in file:
                 if line.startswith(target_date):
-                    print("", line.strip())
+                    print(" ", line.strip())
                     found = True
             if not found:
                 print("No moods found for that date.")
+    except ValueError:
+        print("❌ Invalid date format. Please use YYYY-MM-DD")
     except FileNotFoundError:
         print("⚠️ No mood records found yet.")
 
@@ -75,15 +80,15 @@ def export_to_csv():
 
   
 def main():
-    print("=== Mood Tracker ===")
+    print("\n=== Mood Tracker ===")
     print("1. Log today's mood")
     print("2. View mood history")
     print("3. View mood summary")
     print("4. View moods by date")
     print("5. Export mood history to CSV.")
-    print("X. Exit")
+    print("6. Exit")
 
-    choice = input("Enter your choice: ")
+    choice = input("Enter your choice: ").strip()
 
     if choice == "1":
         log_mood()
@@ -95,8 +100,11 @@ def main():
         view_by_date()
     elif choice =="5":
         export_to_csv()
-    else:
+    elif choice == "6":
         print("Goodbye!")
+        #break
+    else:
+        print("Invalid option. Please try again.")
 
 if __name__ == "__main__":
     main()
