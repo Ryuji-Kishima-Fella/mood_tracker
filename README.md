@@ -7,6 +7,11 @@
 ![Mood Tracker Screenshot](assets/mood_tracker_screenshot.png)
 
 # Mood Tracker (Python)
+> Version **1.3.0** — Active Development
+![Version](https://img.shields.io/badge/version-1.3.0-blue)
+![Status](https://img.shields.io/badge/status-active-success)
+
+
 
 A simple Python program that helps you record, view, and analyze your daily moods - created as part of my journey learning Python and GitHub version control.
 
@@ -82,11 +87,16 @@ Date,Mood
 - Add daily reminders
 - Turn into a web or mobile app
 
-## 🧩 New Feature (Nov 2025)
-Added an **Export to CSV** option that allows you to save your mood history as `mood_log.csv` for data analysis or visualization later.
+---
 
-## Version History
-- `v1.0` — basic mood tracker
-- `v1.1` — CSV export
-- `v1.2` — date filter + delete
-- `v2.0` — GUI version
+## 🕓 Version History
+
+| Version | Date | Changes |
+|----------|------|----------|
+| **v1.0.0** | 2025-11-04 | Initial release with basic logging and view history |
+| **v1.1.0** | 2025-11-05 | Added mood summary and CSV export features |
+| **v1.2.0** | 2025-11-06 | Added view-by-date and delete-last-entry features |
+| **v1.3.0** | 2025-11-07 | Added edit entry feature and improved menu structure |
+
+> 💡 Future versions will include GUI (v2.0) and chart visualization (v2.1)
+
