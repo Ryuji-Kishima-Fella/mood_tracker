@@ -23,3 +23,11 @@ All notable changes to this project will be documented here.
 ### Added
 - Basic mood logging
 - View mood history
+
+## [1.4.0] — 2025-11-09
+### Added
+- Describe new features here
+
+## [1.4.0] — 2025-11-09
+### Added
+- Describe new features here

@@ -8,7 +8,7 @@
 
 # Mood Tracker (Python)
 > Version **1.3.0** — Active Development
-![Version](https://img.shields.io/badge/version-1.3.0-blue)
+![Version](https://img.shields.io/badge/version-1.4.0-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
 
 
