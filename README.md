@@ -10,7 +10,6 @@
 > 
 ![Version](https://img.shields.io/badge/version-1.4.0-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
-— Active Development
 
 
 A simple Python program that helps you record, view, and analyze your daily moods - created as part of my journey learning Python and GitHub version control.
