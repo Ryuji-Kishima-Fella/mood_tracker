@@ -1,6 +1,6 @@
 from datetime import datetime
 import csv
-
+import sys
 
 def log_mood():
     mood = input("How are you feeling today? ")
@@ -78,15 +78,37 @@ def export_to_csv():
     except FileNotFoundError:
         print("⚠️ No mood records found yet. Please log some moods first.")
 
+def delete_last_entry():
+    # Remove the last mood entry from mood_log.txt.
+    try:
+        with open("mood_log.txt", "r") as file:
+            lines = file.readlines()
+        if not lines:
+            print("⚠️ No entries to delete.")
+            return
+
+        print(f"Last entry:\n{lines[-1].strip()}")
+        confirm = input("Delete this entry? (Y/N): ").strip().lower()
+        if confirm == "y":
+            with open("mood_log.txt", "w") as file:
+                file.writelines(lines[:-1])
+            print("🗑️ Last entry deleted.")
+        else:
+            print("❌ Deletion cancelled.")
+    except FileNotFoundError:
+        print("⚠️ No mood records found yet.")
   
 def main():
+    
+
     print("\n=== Mood Tracker ===")
     print("1. Log today's mood")
     print("2. View mood history")
     print("3. View mood summary")
     print("4. View moods by date")
     print("5. Export mood history to CSV.")
-    print("6. Exit")
+    print("6. Delete last mood entry")
+    print("7. Exit")
 
     choice = input("Enter your choice: ").strip()
 
@@ -101,8 +123,10 @@ def main():
     elif choice =="5":
         export_to_csv()
     elif choice == "6":
+        delete_last_entry()
+    elif choice == "7":
         print("Goodbye!")
-        #break
+        sys.exit()
     else:
         print("Invalid option. Please try again.")
 
