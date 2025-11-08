@@ -31,3 +31,7 @@ All notable changes to this project will be documented here.
 ## [1.4.0] — 2025-11-09
 ### Added
 - Describe new features here
+
+## [2.0] — 2025-11-09
+### Added
+- Describe new features here
