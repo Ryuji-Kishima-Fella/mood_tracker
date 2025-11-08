@@ -100,3 +100,12 @@ Date,Mood
 
 > 💡 Future versions will include GUI (v2.0) and chart visualization (v2.1)
 
+---
+
+## 🚀 Release Checklist
+
+1. [ ] Update version number in README and CHANGELOG  
+2. [ ] Commit and push changes  
+3. [ ] Run `git release vX.Y.Z` (or create tag manually)  
+4. [ ] Verify tag appears under [Releases](https://github.com/<your-username>/mood-tracker/releases)
+
