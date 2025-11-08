@@ -98,37 +98,93 @@ def delete_last_entry():
     except FileNotFoundError:
         print("⚠️ No mood records found yet.")
   
+def edit_mood_entry():
+    # Allow user to edit a specific mood entry.
+    try:
+        with open("mood_log.txt", "r") as file:
+            lines = file.readlines()
+
+        if not lines:
+            print("⚠️ No mood entries found.")
+            return
+
+        # Display entries with line numbers
+        print("\n📝 Mood History:")
+        for i, line in enumerate(lines, start=1):
+            print(f"{i}.{line.strip()}")
+
+        # Ask user which entry to edit
+        index = input("Enter the number of the entry to edit: ").strip()
+        if not index.isdigit():
+            print("❌ Invalid input. Please enter a number.")
+            return
+
+        index = int(index)
+        if index < 1 or index > len(lines):
+            print("❌ Invalid entry number.")
+            return
+
+        # Show the selected entry
+        old_entry = lines[index - 1].strip()
+        print(f"\nCurrent entry: {old_entry}")
+
+        # Ask for new mood
+        new_mood = input("Enter new mood: ").strip().capitalize()
+        if not new_mood:
+            print("❌ Mood entry cannot be empty.")
+            return
+
+        # Extract date part and replace mood
+        if " - " in old_entry:
+            date_part = old_entry.split(" - ")[0]
+            new_entry = f"{date_part} - {new_mood}\n"
+        else:
+            new_entry = f"{new_entry}\n"
+
+        # Replace and save
+        lines[index - 1] = new_entry
+        with open("mood_log.txt", "w") as file:
+            file.writelines(lines)
+
+        print(f"✅ Entry updated: {new_entry.strip()}")
+
+    except FileNotFoundError:
+        print("⚠️ No mood records found yet.")
+
 def main():
     
+    while True:
+        print("\n=== Mood Tracker ===")
+        print("1. Log today's mood")
+        print("2. View mood history")
+        print("3. View mood summary")
+        print("4. View moods by date")
+        print("5. Export mood history to CSV.")
+        print("6. Delete last mood entry")
+        print("7. Edit a mood entry")
+        print("X. Exit")
 
-    print("\n=== Mood Tracker ===")
-    print("1. Log today's mood")
-    print("2. View mood history")
-    print("3. View mood summary")
-    print("4. View moods by date")
-    print("5. Export mood history to CSV.")
-    print("6. Delete last mood entry")
-    print("7. Exit")
+        choice = input("Enter your choice: ").strip()
 
-    choice = input("Enter your choice: ").strip()
-
-    if choice == "1":
-        log_mood()
-    elif choice == "2":
-        show_moods()
-    elif choice == "3":
-        show_summary()
-    elif choice == "4":
-        view_by_date()
-    elif choice =="5":
-        export_to_csv()
-    elif choice == "6":
-        delete_last_entry()
-    elif choice == "7":
-        print("Goodbye!")
-        sys.exit()
-    else:
-        print("Invalid option. Please try again.")
+        if choice == "1":
+            log_mood()
+        elif choice == "2":
+            show_moods()
+        elif choice == "3":
+            show_summary()
+        elif choice == "4":
+            view_by_date()
+        elif choice =="5":
+            export_to_csv()
+        elif choice == "6":
+            delete_last_entry()
+        elif choice == "7":
+            edit_mood_entry()
+        elif choice == "x":
+            print("Goodbye!")
+            break 
+        else:
+            print("Invalid option. Please try again.")
 
 if __name__ == "__main__":
     main()
