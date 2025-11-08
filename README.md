@@ -1,6 +1,5 @@
 ![Python](https://img.shields.io/badge/python-3.14-blue)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Ryuji-Kishima-Fella/mood_tracker)
-
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
