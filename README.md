@@ -96,8 +96,28 @@ Date,Mood
 | **v1.1.0** | 2025-11-05 | Added mood summary and CSV export features |
 | **v1.2.0** | 2025-11-06 | Added view-by-date and delete-last-entry features |
 | **v1.3.0** | 2025-11-07 | Added edit entry feature and improved menu structure |
+| **v2.0.0** | 2025-11-08 | First GUI version using Tkinter |
+| **v2.1.0** | 2025-11-09 | Switched to CustomTkinter for dynamic GUI|
+| **v2.2.0** | 2025-11-09 | Added real-time chart visualization| 
 
-> 💡 Future versions will include GUI (v2.0) and chart visualization (v2.1)
+--- 
+
+## 🧩 Changelog
+
+### v2.0 — October 2025
+- First GUI version using CustomTkinter
+- Basic mood logging, CSV export, and summary chart
+
+### v2.1 — November 2025
+- Added edit/delete moods directly from GUI
+- Introduced dark mode support and refreshable pie chart
+- Fixed file I/O and auto-refresh issues
+
+### v2.2 — November 2025
+- Added date filters (All, Today, Last 7 Days, Last 30 Days)
+- Improved window focus behavior for History and Summary
+- Enhanced UX with live refresh and theme consistency
+
 
 ---
 
