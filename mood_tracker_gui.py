@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog
 from datetime import datetime
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from matplotlib.figure import Figure
 import csv, os
 
 MOOD_FILE = "mood_log.txt"
@@ -20,6 +22,7 @@ class MoodTrackerGUI:
         tk.Button(root, text="Log Mood", command=self.log_mood).pack(pady=10)
         tk.Button(root, text="View & Edit History", command=self.view_history).pack(pady=5)
         tk.Button(root, text="Export to CSV", command=self.export_csv).pack(pady=5)
+        tk.Button(root, text="📊 View Summary", command=self.view_summary).pack(pady=5)
 
         self.status = tk.Label(root, text="", fg="gray")
         self.status.pack(side="bottom", fill="x", pady=5)
@@ -120,6 +123,48 @@ class MoodTrackerGUI:
                     date, mood = line.strip().split(" - ", 1)
                     writer.writerow([date, mood])
         messagebox.showinfo("Export", "Mood history exported to CSV!")
+
+    def view_summary(self):
+        # Display a pie chart summarizing mood frequencies.
+        if not os.path.exists(MOOD_FILE):
+            messagebox.showinfo("Summary", "No mood data available yet.")
+            return
+
+        # Count moods
+        mood_counts = {}
+        with open(MOOD_FILE, "r", encoding="utf-8") as f:
+            for line in f:
+                if " - " in line:
+                    _, mood = line.strip().split(" - ", 1)
+                    mood_counts[mood] = mood_counts.get(mood, 0) + 1
+
+        if not mood_counts:
+            messagebox.showinfo("Summary", "No valid mood entries found.")
+            return
+
+        # Create new window for chart
+        win = tk.Toplevel(self.root)
+        win.title("Mood Summary")
+        win.geometry("420x420")
+
+        # Create matplotlib figure
+        fig = Figure(figsize=(4, 4))
+        ax = fig.add_subplot(111)
+        moods = list(mood_counts.keys())
+        counts = list(mood_counts.values())
+
+        ax.pie(counts, labels=moods, autopct="%1.1f%%", startangle=90)
+        ax.set_title("Mood Distribution")
+
+        #Embed the figure in Tkinter 
+        canvas = FigureCanvasTkAgg(fig, master=win)
+        canvas.draw()
+        canvas.get_tk_widget().pack(expand=True, fill="both")
+
+        # Refresh button
+        tk.Button(win, text="🔄 Refresh", command=lambda: [win.destroy(), self.view_summary()]).pack(pady=10)
+
+
 
 if __name__ == "__main__":
     root = tk.Tk()
