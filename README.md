@@ -7,7 +7,7 @@
 ![Mood Tracker Screenshot](assets/mood_tracker_screenshot.png)
 
 # Mood Tracker (Python)
-> ![Version](https://img.shields.io/badge/version-1.4.0-blue)
+> ![Version](https://img.shields.io/github/v/tag/Ryuji-Kishima-Fella/mood_tracker?sort=semver)
 ![Status](https://img.shields.io/badge/status-active-success)
 
 
