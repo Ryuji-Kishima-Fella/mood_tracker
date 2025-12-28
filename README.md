@@ -12,7 +12,7 @@
 
 
 
-A simple Python program that helps you record, view, and analyze your daily moods - created as part of my journey learning Python and GitHub version control.
+A simple Python program that helps you record, view, and analyze your daily moods - created as part of my journey learning Python and GitHub version control. 
 
 ---
 
