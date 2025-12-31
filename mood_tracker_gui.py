@@ -19,13 +19,29 @@ class MoodTrackerGUI:
         self.option = tk.OptionMenu(root, self.mood_var, *moods)
         self.option.pack(pady=5)
 
-        tk.Button(root, text="Log Mood", command=self.log_mood).pack(pady=10)
-        tk.Button(root, text="View & Edit History", command=self.view_history).pack(pady=5)
-        tk.Button(root, text="Export to CSV", command=self.export_csv).pack(pady=5)
-        tk.Button(root, text="📊 View Summary", command=self.view_summary).pack(pady=5)
+        tk.Button(root, text="Log Mood (Ctrl+L)", command=self.log_mood).pack(pady=10)
+        tk.Button(root, text="View & Edit History (Ctrl+H)", command=self.view_history).pack(pady=5)
+        tk.Button(root, text="Export to CSV (Ctrl+E)", command=self.export_csv).pack(pady=5)
+        tk.Button(root, text="📊 View Summary (Ctrl+S)", command=self.view_summary).pack(pady=5)
 
         self.status = tk.Label(root, text="", fg="gray")
         self.status.pack(side="bottom", fill="x", pady=5)
+
+        # Keyboard shortcuts
+        self.root.bind("<Control-l>", lambda e: self.log_mood())
+        self.root.bind("<Control-h>", lambda e: self.view_history())
+        self.root.bind("<Control-s>", lambda e: self.view_summary())
+        self.root.bind("<Control-e>", lambda e: self.export_csv())
+        self.root.bind("<Control-t>", lambda e: self.toggle_theme())
+        self.root.bind("<Escape>", self.close_active_window)
+
+    def close_active_window(self, event=None):
+        # Close summary window if open
+        if self.summary_window and self.summary_window.winfo_exists():
+            self.summary_window.destroy()
+            self.summary_window = None
+
+
 
     def log_mood(self):
         mood = self.mood_var.get()

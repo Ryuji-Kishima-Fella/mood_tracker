@@ -26,6 +26,19 @@ A simple Python program that helps you record, view, and analyze your daily mood
 
 ---
 
+## ⌨️ Keyboard Shortcuts
+
+| Shortcut | Action |
+|--------|-------|
+| Ctrl + L | Log mood |
+| Ctrl + H | Open mood history |
+| Ctrl + S | Open mood summary |
+| Ctrl + E | Export moods to CSV |
+| Ctrl + T | Toggle dark/light mode |
+| Esc | Close active window |
+
+---
+
 ## About the Project
 The Mood Tracker started as a console-based learning project to practice:
 - File I/O in Python
