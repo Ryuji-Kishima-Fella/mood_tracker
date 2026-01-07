@@ -10,8 +10,14 @@ MOOD_FILE = "mood_log.txt"
 class MoodTrackerGUI:
     def __init__(self, root):
         self.root = root
+        
+        self.summary_window = None
+
         self.root.title("Mood Tracker v2.0")
         self.root.geometry("420x420")
+
+        self.root.protocol("WM_DELETE_WINDOW", self.quit_app)
+
 
         tk.Label(root, text="Select your mood:", font=("Arial", 14)).pack(pady=10)
         self.mood_var = tk.StringVar(value="😊 Happy")
@@ -33,14 +39,26 @@ class MoodTrackerGUI:
         self.root.bind("<Control-s>", lambda e: self.view_summary())
         self.root.bind("<Control-e>", lambda e: self.export_csv())
         self.root.bind("<Control-t>", lambda e: self.toggle_theme())
-        self.root.bind("<Escape>", self.close_active_window)
+        self.root.bind_all("<Escape>", self.close_active_window)
 
     def close_active_window(self, event=None):
-        # Close summary window if open
-        if self.summary_window and self.summary_window.winfo_exists():
-            self.summary_window.destroy()
-            self.summary_window = None
+        # Close summary window first if open
+        if hasattr(self, "summary_window") and self.summary_window:
+            if self.summary_window.winfo_exists():
+                self.summary_window.destroy()
+                self.summary_window = None
+                return
 
+        # Close other toplevels if focused
+        focused = self.root.focus_get()
+        if focused:
+            win = focused.winfo_toplevel()
+            if win != self.root:
+                win.destroy()
+
+    def quit_app(self):
+        if messagebox.askyesno("Quit", "Are you sure you want to exit Mood Tracker?"):
+            self.root.destroy()
 
 
     def log_mood(self):
@@ -141,6 +159,12 @@ class MoodTrackerGUI:
         messagebox.showinfo("Export", "Mood history exported to CSV!")
 
     def view_summary(self):
+        if self.summary_window and self.summary_window.winfo_exists():
+            self.summary_window.lift()
+            self.summary_window.focus_force()
+            return
+
+
         # Display a pie chart summarizing mood frequencies.
         if not os.path.exists(MOOD_FILE):
             messagebox.showinfo("Summary", "No mood data available yet.")
@@ -159,7 +183,9 @@ class MoodTrackerGUI:
             return
 
         # Create new window for chart
-        win = tk.Toplevel(self.root)
+        self.summary_window = tk.Toplevel(self.root)
+        win = self.summary_window
+        
         win.title("Mood Summary")
         win.geometry("420x420")
 

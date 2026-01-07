@@ -36,6 +36,8 @@ A simple Python program that helps you record, view, and analyze your daily mood
 | Ctrl + E | Export moods to CSV |
 | Ctrl + T | Toggle dark/light mode |
 | Esc | Close active window |
+| Alt + F4 | Exit application |
+
 
 ---
 
