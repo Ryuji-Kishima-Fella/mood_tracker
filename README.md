@@ -16,6 +16,17 @@ A simple Python program that helps you record, view, and analyze your daily mood
 
 ---
 
+## 🚀 Current Version: v2.3
+
+### What’s New in v2.3
+- ⌨️ Keyboard shortcuts for faster navigation
+- 🪟 Improved popup window handling (Escape to close active windows)
+- 🧠 Better internal state management for GUI windows
+- 🛠 Overall UX polish and stability improvements
+
+---
+
+
 ## 🌟 Features
 
 - 📝 **Log your mood** for the day  
@@ -44,11 +55,18 @@ A simple Python program that helps you record, view, and analyze your daily mood
 ## About the Project
 The Mood Tracker started as a console-based learning project to practice:
 - File I/O in Python
-- Data storage and retrieval  
-- Simple analytics (frequency counts)  
-- Version control and GitHub documentation 
+- Simple analytics (frequency counting)
+- Structured program flow
+- Git and GitHub fundamentals
 
-It demonstrates progressive skill growth — from basic input/output to structured data handling and CSV exporting.
+From **v2.0 onward**, the project transitioned to a **GUI-based desktop application**, introducing:
+- Event-driven programming
+- Window lifecycle management
+- Data visualization with Matplotlib
+- Keyboard accessibility and UX improvements
+
+This project reflects **incremental learning and continuous refinement**, rather than a one-off assignment.
+
 
 ---
 
@@ -105,14 +123,14 @@ Date,Mood
 
 ## 🕓 Version History
 
-| Version | Date | Changes |
-|----------|------|----------|
-| **v1.0.0** | 2025-11-04 | Initial release with basic logging and view history |
-| **v1.1.0** | 2025-11-05 | Added mood summary and CSV export features |
-| **v1.2.0** | 2025-11-06 | Added view-by-date and delete-last-entry features |
-| **v1.3.0** | 2025-11-07 | Added edit entry feature and improved menu structure |
+For a full and detailed version history, see
+📜 **[CHANGELOG.md](CHANGELOG.md)**
 
-> 💡 Future versions will include GUI (v2.0) and chart visualization (v2.1)
+Summary:
+
+v1.x — Console-based implementations and early features
+
+v2.x — GUI-based desktop application with enhanced usability and visualization
 
 ---
 
