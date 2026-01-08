@@ -134,6 +134,14 @@ v2.x — GUI-based desktop application with enhanced usability and visualization
 
 ---
 
+## Known Issues
+- On some systems, keyboard shortcuts may differ by OS
+- GUI layout may scale differently on high-DPI displays
+
+
+---
+
+
 ## 🚀 Release Checklist
 
 1. [ ] Update version number in README and CHANGELOG  
