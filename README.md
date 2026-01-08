@@ -6,15 +6,25 @@
 ![Mood Tracker Screenshot](assets/mood_tracker_screenshot.png)
 
 # Mood Tracker (Python)
-> 
-![Version](https://img.shields.io/github/v/tag/Ryuji-Kishima-Fella/mood_tracker?sort=semver)
+> ![Version](https://img.shields.io/github/v/tag/Ryuji-Kishima-Fella/mood_tracker?sort=semver)
 ![Status](https://img.shields.io/badge/status-active-success)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Ryuji-Kishima-Fella/mood_tracker?style=for-the-badge&color=blue)
 
 
-A simple Python program that helps you record, view, and analyze your daily moods - created as part of my journey learning Python and GitHub version control.
+A simple Python program that helps you record, view, and analyze your daily moods - created as part of my journey learning Python and GitHub version control. 
 
 ---
+
+## 🚀 Current Version: v2.3
+
+### What’s New in v2.3
+- ⌨️ Keyboard shortcuts for faster navigation
+- 🪟 Improved popup window handling (Escape to close active windows)
+- 🧠 Better internal state management for GUI windows
+- 🛠 Overall UX polish and stability improvements
+
+---
+
 
 ## 🌟 Features
 
@@ -26,14 +36,36 @@ A simple Python program that helps you record, view, and analyze your daily mood
 
 ---
 
+## ⌨️ Keyboard Shortcuts
+
+| Shortcut | Action |
+|--------|-------|
+| Ctrl + L | Log mood |
+| Ctrl + H | Open mood history |
+| Ctrl + S | Open mood summary |
+| Ctrl + E | Export moods to CSV |
+| Ctrl + T | Toggle dark/light mode |
+| Esc | Close active window |
+| Alt + F4 | Exit application |
+
+
+---
+
 ## About the Project
 The Mood Tracker started as a console-based learning project to practice:
 - File I/O in Python
-- Data storage and retrieval  
-- Simple analytics (frequency counts)  
-- Version control and GitHub documentation 
+- Simple analytics (frequency counting)
+- Structured program flow
+- Git and GitHub fundamentals
 
-It demonstrates progressive skill growth — from basic input/output to structured data handling and CSV exporting.
+From **v2.0 onward**, the project transitioned to a **GUI-based desktop application**, introducing:
+- Event-driven programming
+- Window lifecycle management
+- Data visualization with Matplotlib
+- Keyboard accessibility and UX improvements
+
+This project reflects **incremental learning and continuous refinement**, rather than a one-off assignment.
+
 
 ---
 
@@ -90,33 +122,14 @@ Date,Mood
 
 ## 🕓 Version History
 
-| Version | Date | Changes |
-|----------|------|----------|
-| **v1.0.0** | 2025-11-04 | Initial release with basic logging and view history |
-| **v1.1.0** | 2025-11-05 | Added mood summary and CSV export features |
-| **v1.2.0** | 2025-11-06 | Added view-by-date and delete-last-entry features |
-| **v1.3.0** | 2025-11-07 | Added edit entry feature and improved menu structure |
-| **v2.0.0** | 2025-11-08 | First GUI version using Tkinter |
-| **v2.1.0** | 2025-11-09 | Switched to CustomTkinter for dynamic GUI|
-| **v2.2.0** | 2025-11-09 | Added real-time chart visualization| 
+For a full and detailed version history, see
+📜 **[CHANGELOG.md](CHANGELOG.md)**
 
---- 
+Summary:
 
-## 🧩 Changelog
+v1.x — Console-based implementations and early features
 
-### v2.0 — November 8, 2025
-- First GUI version using CustomTkinter
-- Basic mood logging, CSV export, and summary chart
-
-### v2.1 — November 9, 2025
-- Added edit/delete moods directly from GUI
-- Introduced dark mode support and refreshable pie chart
-- Fixed file I/O and auto-refresh issues
-
-### v2.2 — November 9, 2025
-- Added date filters (All, Today, Last 7 Days, Last 30 Days)
-- Improved window focus behavior for History and Summary
-- Enhanced UX with live refresh and theme consistency
+v2.x — GUI-based desktop application with enhanced usability and visualization
 
 
 ---
