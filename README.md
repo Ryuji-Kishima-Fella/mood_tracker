@@ -1,6 +1,5 @@
 ![Python](https://img.shields.io/badge/python-3.14-blue)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Ryuji-Kishima-Fella/mood_tracker)
-
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 
@@ -9,7 +8,7 @@
 # Mood Tracker (Python)
 > ![Version](https://img.shields.io/github/v/tag/Ryuji-Kishima-Fella/mood_tracker?sort=semver)
 ![Status](https://img.shields.io/badge/status-active-success)
-
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Ryuji-Kishima-Fella/mood_tracker?style=for-the-badge&color=blue)
 
 
 A simple Python program that helps you record, view, and analyze your daily moods - created as part of my journey learning Python and GitHub version control. 
@@ -131,6 +130,7 @@ Summary:
 v1.x — Console-based implementations and early features
 
 v2.x — GUI-based desktop application with enhanced usability and visualization
+
 
 ---
 
